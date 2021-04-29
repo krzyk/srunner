@@ -31,7 +31,7 @@ if git status | grep -q "Changes to be committed"
 then
     git commit --message "remote update"
     echo "Pushing git commit"
-    git push -u origin HEAD:main
+    git push -u origin HEAD:main || git pull --rebase --prune --tags &&  git push -u origin HEAD:main
 else
     echo "No changes detected"
 fi
