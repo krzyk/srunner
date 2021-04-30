@@ -14,7 +14,7 @@ rm -rf $CLONE_DIR/*
 echo "Generating new data"
 mkdir -p $OUTPUT
 gpg -d --batch --yes -z 0 --cipher-algo AES256 -o test.jar --passphrase "$KEY" enc
-java -jar test.jar -p $P1 -s $S1 -c $C1 -t $OUTPUT -v $VOI >/dev/null 2>/dev/null
+java -jar test.jar -p $P1 -s $S1 -c $C1 -t $OUTPUT -v $VOI
 rm test.jar
 
 echo "Cloning destination git repository"
