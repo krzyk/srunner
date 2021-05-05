@@ -4,11 +4,7 @@
 name: dispatch
 
 on:
-  workflow_dispatch:
-    inputs:
-      voi:
-        description: 'List of voivodeships'
-        required: true
+  workflow_dispatch
 
 jobs:
   build:
