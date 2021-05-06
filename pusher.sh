@@ -21,7 +21,6 @@ echo HOST=$HOST
 rm -rf $CLONE_DIR/*
 
 echo "Generating new data"
-mkdir -p $OUTPUT
 gpg -d --batch --yes -z 0 --cipher-algo AES256 -o test.jar --passphrase "$KEY" enc
 
 JAR_DIR=$(pwd)
@@ -36,6 +35,7 @@ git config user.name "szcz""epie""nia"
 for VOI in $VOIS; do
     cd $JAR_DIR
     rm -rf $OUTPUT
+    mkdir -p $OUTPUT
     java -jar test.jar -p $P -s $S -c $C -t $OUTPUT -v $VOI
 
     cd "$CLONE_DIR"
