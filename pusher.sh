@@ -55,4 +55,3 @@ for VOI in $VOIS; do
 
 done
 
-rm test.jar
