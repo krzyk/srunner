@@ -4,7 +4,11 @@
 name: refresh
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      user:
+        description: 'User ID'
+        required: true
 
 jobs:
   build:
@@ -25,4 +29,13 @@ jobs:
         P1: ${{ secrets.P1}}
         S1: ${{ secrets.S1 }}
         C1: ${{ secrets.C1 }}
-      run: ./refresh.sh 
+        P2: ${{ secrets.P2 }}
+        S2: ${{ secrets.S2 }}
+        C2: ${{ secrets.C2 }}
+        P3: ${{ secrets.P3 }}
+        S3: ${{ secrets.S3 }}
+        C3: ${{ secrets.C3 }}
+        P4: ${{ secrets.P4 }}
+        S4: ${{ secrets.S4 }}
+        C4: ${{ secrets.C4 }}
+      run: ./refresh.sh  ${{ github.event.inputs.user }}

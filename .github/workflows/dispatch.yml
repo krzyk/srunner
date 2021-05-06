@@ -6,7 +6,7 @@ name: dispatch
 on:
   workflow_dispatch:
     inputs:
-      voi:
+      user:
         description: 'List of voivodeships'
         required: true
 
@@ -22,11 +22,20 @@ jobs:
       with:
         java-version: '16'
         distribution: 'adopt'
-    - name: Run ${{ github.event.inputs.voi}}
+    - name: Run ${{ github.event.inputs.user}}
       env:
         KEY: ${{ secrets.KEY }}
         PPAT: ${{ secrets.PPAT }}
-        P1: ${{ secrets.P1}}
+        P1: ${{ secrets.P1 }}
         S1: ${{ secrets.S1 }}
         C1: ${{ secrets.C1 }}
-      run: ./pusher.sh ${{ github.event.inputs.voi}}
+        P2: ${{ secrets.P1 }}
+        S2: ${{ secrets.S1 }}
+        C2: ${{ secrets.C1 }}
+        P3: ${{ secrets.P1 }}
+        S3: ${{ secrets.S1 }}
+        C3: ${{ secrets.C1 }}
+        P4: ${{ secrets.P1 }}
+        S4: ${{ secrets.S1 }}
+        C4: ${{ secrets.C1 }}
+      run: ./pusher.sh ${{ github.event.inputs.user }}
