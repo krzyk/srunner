@@ -36,7 +36,7 @@ for VOI in $VOIS; do
     cd $JAR_DIR
     rm -rf $OUTPUT
     mkdir -p $OUTPUT
-    java -jar test.jar -p $P -s $S -c $C -t $OUTPUT -v $VOI
+    java -jar test.jar -p $P -s $S -c $C -t $OUTPUT -v $VOI --wait 800
 
     cd "$CLONE_DIR"
     git pull --rebase --prune --tags
