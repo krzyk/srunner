@@ -11,8 +11,8 @@ OUTPUT=$(pwd)/output
 
 echo "USER_ID=$USER_ID, USER_COUNT=$USER_COUNT"
 
-echo $(echo $VOIS | awk '{for (i = '$USER_ID'; i <= NF; i+='$USER_COUNT') {print $i}}')
-VOIS=$ALL_VOIS
+VOIS=$(echo $ALL_VOIS | awk '{for (i = '$USER_ID'; i <= NF; i+='$USER_COUNT') {print $i}}')
+#VOIS=$ALL_VOIS
 
 echo "VOIS = $VOIS";
 
