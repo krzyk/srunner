@@ -7,7 +7,10 @@ on:
   workflow_dispatch:
     inputs:
       user:
-        description: 'List of voivodeships'
+        description: 'User number'
+        required: true
+      user_count:
+        description: 'Number of users'
         required: true
 
 jobs:
@@ -38,4 +41,4 @@ jobs:
         P4: ${{ secrets.P1 }}
         S4: ${{ secrets.S1 }}
         C4: ${{ secrets.C1 }}
-      run: ./pusher.sh ${{ github.event.inputs.user }}
+      run: ./pusher.sh ${{ github.event.inputs.user }} ${{ github.event.inputs.user_count }}
