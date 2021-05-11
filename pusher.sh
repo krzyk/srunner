@@ -50,7 +50,7 @@ for VOI in $VOIS; do
     git pull --rebase --prune --tags
 
     rsync -av $OUTPUT/ .
-    git add -A
+    git add -v -A
 
     if git status | grep -q "Changes to be committed"
     then
