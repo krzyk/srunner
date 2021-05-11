@@ -49,7 +49,7 @@ for VOI in $VOIS; do
     cd "$CLONE_DIR"
     git pull --rebase --prune --tags
 
-    rsync $OUTPUT/ .
+    rsync -av $OUTPUT/ .
     git add -A
 
     if git status | grep -q "Changes to be committed"
