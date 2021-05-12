@@ -44,7 +44,7 @@ for VOI in $VOIS; do
     cd $JAR_DIR
     rm -rf $OUTPUT
     mkdir -p $OUTPUT
-    java -jar test.jar -p $P -s $S -c $C -t $OUTPUT -v $VOI --wait 1000
+    java -jar test.jar -p $P -s $S -c $C -t $OUTPUT -v $VOI --wait 900
 
     cd "$CLONE_DIR"
     git pull --rebase --prune --tags
