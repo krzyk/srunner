@@ -20,6 +20,8 @@ P_VARNAME=P$1
 S_VARNAME=S$1
 C_VARNAME=C$1
 
+echo "$P_VARNAME $S_VARNAME $C_VARNAME"
+
 P=${!P_VARNAME}
 S=${!S_VARNAME}
 C=${!C_VARNAME}
@@ -44,7 +46,7 @@ for VOI in $VOIS; do
     cd $JAR_DIR
     rm -rf $OUTPUT
     mkdir -p $OUTPUT
-    java -jar test.jar -p $P -s $S -c $C -t $OUTPUT -v $VOI --wait 900
+    java -jar test.jar --credentials $P1:$S1:$C1,$P2:$S2:$C2 -t $OUTPUT -v $VOI
 
     cd "$CLONE_DIR"
     git pull --rebase --prune --tags
