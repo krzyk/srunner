@@ -3,6 +3,10 @@
 
 name: dispatch
 
+concurrency:
+  group: current-group
+  cancel-in-progress: false
+
 on:
   workflow_dispatch:
     inputs:
