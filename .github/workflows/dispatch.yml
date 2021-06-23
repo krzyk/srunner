@@ -31,6 +31,8 @@ jobs:
         distribution: 'adopt'
     - name: Run ${{ github.event.inputs.user}}
       env:
+        BOT_KEY: ${{ secrets.BOT_KEY }}
+        CHAT_ID: ${{ secrets.CHAT_ID }}
         KEY: ${{ secrets.KEY }}
         PPAT: ${{ secrets.PPAT }}
         P1: ${{ secrets.P1 }}

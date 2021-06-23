@@ -46,7 +46,7 @@ for VOI in $VOIS; do
     cd $JAR_DIR
     rm -rf $OUTPUT
     mkdir -p $OUTPUT
-    java -jar test.jar --credentials $P1:$S1:$C1,$P2:$S2:$C2 -t $OUTPUT -v $VOI
+    java -jar test.jar --credentials $P1:$S1:$C1,$P2:$S2:$C2 -t $OUTPUT -v $VOI --bot-key $BOT_KEY --chat-id $CHAT_ID
 
     cd "$CLONE_DIR"
     git pull --rebase --prune --tags
